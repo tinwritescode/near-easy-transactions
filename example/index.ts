@@ -1,6 +1,6 @@
 import * as nearAPI from 'near-api-js'
-import { contractName, networkId, keyPair, sender } from '../config'
-import { signTransaction, sendTransaction, initRequirements } from '../modules';
+import { contractName, networkId, keyPair, sender } from '../src/config'
+import { signTransaction, sendTransaction, initRequirements } from '../src/modules';
 
 const provider = new nearAPI.providers.JsonRpcProvider({
 	url: `https://rpc.${networkId}.near.org`

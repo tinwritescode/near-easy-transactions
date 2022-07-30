@@ -1,6 +1,6 @@
 import * as nearAPI from 'near-api-js'
 import { Action, SignedTransaction } from 'near-api-js/lib/transaction';
-import sha256 from 'js-sha256'
+import * as sha256 from 'js-sha256'
 import { KeyPair, PublicKey } from 'near-api-js/lib/utils';
 import { networkId } from '../config'
 import { AccessKeyQuery } from '../models/types'
@@ -62,10 +62,10 @@ export async function sendTransaction(provider: nearAPI.providers.JsonRpcProvide
 		// encodes signed transaction to serialized Borsh (required for all transactions)
 		const signedSerializedTx = signedTransaction.encode();
 
-		// sends transaction to NEAR blockchain via JSON RPC call and records the result
+		// TODO: Correct type
 		const result = await provider.sendJsonRpc("broadcast_tx_commit", [
 			Buffer.from(signedSerializedTx).toString("base64"),
-		]);
+		]) as any;
 
 		// console results :)
 		console.log("Transaction Results: ", JSON.stringify(result?.transaction));

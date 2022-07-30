@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../models/types.d.ts"],
-  "sourcesContent": ["import { QueryResponseKind } from 'near-api-js/lib/providers/provider';\n\nexport interface AccessKeyQuery extends QueryResponseKind {\n\tpermission: string;\n\tnonce: number;\n}\nexport interface Transaction {\n\tactions: Action[];\n\thash: string;\n\tnonce: number;\n\tpublic_key: string;\n\treceiver_id: string;\n\tsignature: string;\n\tsigner_id: string;\n}\n\ninterface Action {\n\tFunctionCall: FunctionCall;\n}\n\ninterface FunctionCall {\n\targs: string;\n\tdeposit: string;\n\tgas: number;\n\tmethod_name: string;\n}\n"],
-  "mappings": ";;AAAA;",
-  "names": []
-}

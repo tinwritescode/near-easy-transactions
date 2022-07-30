@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../index.ts"],
-  "sourcesContent": ["import * as nearAPI from 'near-api-js'\nimport { contractName, networkId, keyPair, sender } from './config'\nimport { signTransaction, sendTransaction, initRequirements } from './modules';\n\nconst provider = new nearAPI.providers.JsonRpcProvider({\n\turl: `https://rpc.${networkId}.near.org`\n});\n\n((async () => {\n\n\tconst { nonce, recentBlockHash } = await initRequirements({ provider, sender, publicKey: keyPair.getPublicKey() });\n\n\tconst actions = [nearAPI.transactions.functionCall('set_greeting', Buffer.from(JSON.stringify({})), 10000000000000, 0\n\t\t// nearAPI.utils.format.parseNearAmount('0.1')\n\t)];\n\n\tconst signedTransaction = signTransaction({\n\t\tactions,\n\t\tnonce,\n\t\trecentBlockHash,\n\t\tsender,\n\t\tcontractName,\n\t\tkeyPair\n\t})\n\n\tsendTransaction(provider, signedTransaction);\n})())"],
-  "mappings": ";;;;;;;;;;;;;;;;;;AAAA,cAAyB;AACzB,oBAAyD;AACzD,qBAAmE;AAEnE,MAAM,WAAW,IAAI,QAAQ,UAAU,gBAAgB;AAAA,EACtD,KAAK,eAAe;AAAA;AAGrB,AAAE,aAAY;AAEb,QAAM,EAAE,OAAO,oBAAoB,MAAM,qCAAiB,EAAE,UAAU,8BAAQ,WAAW,sBAAQ;AAEjG,QAAM,UAAU,CAAC,QAAQ,aAAa,aAAa,gBAAgB,OAAO,KAAK,KAAK,UAAU,MAAM,MAAgB;AAIpH,QAAM,oBAAoB,oCAAgB;AAAA,IACzC;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA;AAGD,sCAAgB,UAAU;AAAA;",
-  "names": []
-}

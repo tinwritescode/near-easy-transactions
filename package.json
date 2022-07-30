@@ -2,9 +2,11 @@
   "name": "near-easy-transactions",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsc ./example/index.ts --outDir ./test --d && node ./test/example/index.js",
+	"build": "tsc index.ts --outDir ./dist -d && echo 'Build success, check out /dist folder'"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,6 @@
     "near-seed-phrase": "^0.2.0"
   },
   "publishConfig": {
-     "tag": "v1-latest"
+    "tag": "v1-latest"
   }
 }

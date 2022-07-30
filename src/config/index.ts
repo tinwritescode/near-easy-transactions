@@ -1,4 +1,4 @@
-import nearApi from 'near-api-js'
+import * as nearApi from 'near-api-js'
 
 const secretKey = "ed25519:Nu2uMnLovU3UZT5bgi9hNBs8XvvL8hcFbWNwisjii5fR1yCLAE8EBgrFnBZGkaqTbdbzLwLyeomu6XRs9nUiivL";
 const keyPair = nearApi.utils.KeyPairEd25519.fromString(secretKey);
