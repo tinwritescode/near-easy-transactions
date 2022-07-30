@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../dist/src/config/index.d.ts"],
+  "sourcesContent": ["import * as nearApi from 'near-api-js';\ndeclare const keyPair: nearApi.utils.key_pair.KeyPair;\ndeclare const sender = \"tinisntreal.testnet\";\ndeclare const networkId = \"testnet\";\ndeclare const contractName = \"dev-1659138722896-68428843510312\";\nexport { sender, networkId, contractName, keyPair };\n"],
+  "mappings": ";;AAAA;",
+  "names": []
+}

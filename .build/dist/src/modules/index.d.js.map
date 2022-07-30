@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../dist/src/modules/index.d.ts"],
+  "sourcesContent": ["/// <reference types=\"node\" />\nimport * as nearAPI from 'near-api-js';\nimport { Action, SignedTransaction } from 'near-api-js/lib/transaction';\nimport { KeyPair, PublicKey } from 'near-api-js/lib/utils';\nimport { AccessKeyQuery } from '../models/types';\ndeclare type SignedTransactionProps = {\n    nonce: number;\n    actions: Action[];\n    recentBlockHash: Buffer;\n    sender: string;\n    keyPair: KeyPair;\n    contractName: string;\n};\ndeclare type RequirementProps = {\n    provider: nearAPI.providers.JsonRpcProvider;\n    sender: string;\n    publicKey: PublicKey;\n};\ndeclare type Requirements = {\n    accessKey: AccessKeyQuery;\n    nonce: number;\n    recentBlockHash: Buffer;\n};\nexport declare function signTransaction({ actions, nonce, recentBlockHash, sender, keyPair, contractName }: SignedTransactionProps): SignedTransaction;\nexport declare function sendTransaction(provider: nearAPI.providers.JsonRpcProvider, signedTransaction: SignedTransaction): Promise<any>;\nexport declare function initRequirements({ provider, sender, publicKey }: RequirementProps): Promise<Requirements>;\nexport {};\n"],
+  "mappings": ";;AAAA;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../dist/src/config/index.js"],
+  "sourcesContent": ["\"use strict\";\nexports.__esModule = true;\nexports.keyPair = exports.contractName = exports.networkId = exports.sender = void 0;\nvar nearApi = require(\"near-api-js\");\nvar secretKey = \"ed25519:Nu2uMnLovU3UZT5bgi9hNBs8XvvL8hcFbWNwisjii5fR1yCLAE8EBgrFnBZGkaqTbdbzLwLyeomu6XRs9nUiivL\";\nvar keyPair = nearApi.utils.KeyPairEd25519.fromString(secretKey);\nexports.keyPair = keyPair;\nvar sender = 'tinisntreal.testnet';\nexports.sender = sender;\nvar networkId = \"testnet\";\nexports.networkId = networkId;\nvar contractName = \"dev-1659138722896-68428843510312\";\nexports.contractName = contractName;\n"],
+  "mappings": ";AACA,QAAQ,aAAa;AACrB,QAAQ,UAAU,QAAQ,eAAe,QAAQ,YAAY,QAAQ,SAAS;AAC9E,IAAI,UAAU,QAAQ;AACtB,IAAI,YAAY;AAChB,IAAI,UAAU,QAAQ,MAAM,eAAe,WAAW;AACtD,QAAQ,UAAU;AAClB,IAAI,SAAS;AACb,QAAQ,SAAS;AACjB,IAAI,YAAY;AAChB,QAAQ,YAAY;AACpB,IAAI,eAAe;AACnB,QAAQ,eAAe;",
+  "names": []
+}

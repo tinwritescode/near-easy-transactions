@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../dist/index.js"],
+  "sourcesContent": ["\"use strict\";\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nexports.__esModule = true;\nexports.initRequirements = exports.sendTransaction = exports.signTransaction = void 0;\nvar modules_1 = require(\"./src/modules\");\n__createBinding(exports, modules_1, \"signTransaction\");\n__createBinding(exports, modules_1, \"sendTransaction\");\n__createBinding(exports, modules_1, \"initRequirements\");\n"],
+  "mappings": ";AACA,IAAI,kBAAmB,WAAQ,QAAK,mBAAqB,QAAO,SAAU,SAAS,GAAG,GAAG,GAAG,IAAI;AAC5F,MAAI,OAAO;AAAW,SAAK;AAC3B,SAAO,eAAe,GAAG,IAAI,EAAE,YAAY,MAAM,KAAK,WAAW;AAAE,WAAO,EAAE;AAAA;AAAA,IAC1E,SAAS,GAAG,GAAG,GAAG,IAAI;AACxB,MAAI,OAAO;AAAW,SAAK;AAC3B,IAAE,MAAM,EAAE;AAAA;AAEd,QAAQ,aAAa;AACrB,QAAQ,mBAAmB,QAAQ,kBAAkB,QAAQ,kBAAkB;AAC/E,IAAI,YAAY,QAAQ;AACxB,gBAAgB,SAAS,WAAW;AACpC,gBAAgB,SAAS,WAAW;AACpC,gBAAgB,SAAS,WAAW;",
+  "names": []
+}

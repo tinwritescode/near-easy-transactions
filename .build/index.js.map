@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../index.ts"],
+  "sourcesContent": ["export { signTransaction, sendTransaction, initRequirements } from './src/modules';"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,qBAAmE;",
+  "names": []
+}
