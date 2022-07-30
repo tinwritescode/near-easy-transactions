@@ -9,8 +9,8 @@
 	"build": "tsc index.ts --outDir ./dist -d && echo 'Build success, check out /dist folder'"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Tin Nguyen",
+  "license": "MIT",
   "dependencies": {
     "js-sha256": "^0.9.0",
     "near-api-js": "^0.45.1",
@@ -18,5 +18,9 @@
   },
   "publishConfig": {
     "tag": "v1-latest"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tinwritescode/near-easy-transactions.git"
+  },
 }
