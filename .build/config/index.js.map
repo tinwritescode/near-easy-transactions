@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../config/index.ts"],
+  "sourcesContent": ["import nearApi from 'near-api-js'\n\nconst secretKey = \"ed25519:Nu2uMnLovU3UZT5bgi9hNBs8XvvL8hcFbWNwisjii5fR1yCLAE8EBgrFnBZGkaqTbdbzLwLyeomu6XRs9nUiivL\";\nconst keyPair = nearApi.utils.KeyPairEd25519.fromString(secretKey);\nconst sender = 'tinisntreal.testnet'\nconst networkId = \"testnet\";\nconst contractName = \"dev-1659138722896-68428843510312\"\n\nexport {\n\tsender,\n\tnetworkId,\n\tcontractName,\n\tkeyPair\n}"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,yBAAoB;AAEpB,MAAM,YAAY;AAClB,MAAM,UAAU,2BAAQ,MAAM,eAAe,WAAW;AACxD,MAAM,SAAS;AACf,MAAM,YAAY;AAClB,MAAM,eAAe;",
+  "names": []
+}
