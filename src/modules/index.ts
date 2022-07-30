@@ -4,6 +4,7 @@ import * as sha256 from 'js-sha256'
 import { KeyPair, PublicKey } from 'near-api-js/lib/utils';
 import { networkId } from '../config'
 import { AccessKeyQuery } from '../models/types'
+// import { FinalExecutionOutcome } from 'near-api-js/providers/provider'
 
 type SignedTransactionProps = {
 	nonce: number
@@ -56,32 +57,28 @@ export function signTransaction({ actions, nonce, recentBlockHash, sender, keyPa
 	return signedTransaction;
 }
 
-export async function sendTransaction(provider: nearAPI.providers.JsonRpcProvider, signedTransaction: SignedTransaction): Promise<void> {
-	// send the transaction!
-	try {
-		// encodes signed transaction to serialized Borsh (required for all transactions)
-		const signedSerializedTx = signedTransaction.encode();
+export async function sendTransaction(provider: nearAPI.providers.JsonRpcProvider, signedTransaction: SignedTransaction): Promise<any> {
+	return new Promise<any>(async (resolve, reject) => {
+		try {
+			// encodes signed transaction to serialized Borsh (required for all transactions)
+			const signedSerializedTx = signedTransaction.encode();
 
-		// TODO: Correct type
-		const result = await provider.sendJsonRpc("broadcast_tx_commit", [
-			Buffer.from(signedSerializedTx).toString("base64"),
-		]) as any;
+			// TODO: Correct type
+			const result = await provider.sendJsonRpc("broadcast_tx_commit", [
+				Buffer.from(signedSerializedTx).toString("base64"),
+			]) as nearAPI.providers.FinalExecutionOutcome
 
-		// console results :)
-		console.log("Transaction Results: ", JSON.stringify(result?.transaction));
-		console.log(
-			"------------------------------------------------------------------------"
-		);
-		console.log("OPEN LINK BELOW to see transaction in NEAR Explorer!");
-		console.log(
-			`https://explorer.${networkId}.near.org/transactions/${result?.transaction.hash}`
-		);
-		console.log(
-			"------------------------------------------------------------------------"
-		);
-	} catch (error) {
-		console.log(error);
-	}
+			// console results :)
+			// console.log("Transaction Results: ", result.transaction);
+			console.log(
+				`https://explorer.${networkId}.near.org/transactions/${result?.transaction.hash}`
+			);
+
+			resolve(result.transaction)
+		} catch (error) {
+			reject(error)
+		}
+	})
 }
 
 

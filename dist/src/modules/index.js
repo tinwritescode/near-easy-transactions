@@ -61,30 +61,33 @@ function signTransaction(_a) {
 exports.signTransaction = signTransaction;
 function sendTransaction(provider, signedTransaction) {
     return __awaiter(this, void 0, void 0, function () {
-        var signedSerializedTx, result, error_1;
+        var _this = this;
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    signedSerializedTx = signedTransaction.encode();
-                    return [4 /*yield*/, provider.sendJsonRpc("broadcast_tx_commit", [
-                            Buffer.from(signedSerializedTx).toString("base64"),
-                        ])];
-                case 1:
-                    result = _a.sent();
-                    // console results :)
-                    console.log("Transaction Results: ", JSON.stringify(result === null || result === void 0 ? void 0 : result.transaction));
-                    console.log("------------------------------------------------------------------------");
-                    console.log("OPEN LINK BELOW to see transaction in NEAR Explorer!");
-                    console.log("https://explorer." + config_1.networkId + ".near.org/transactions/" + (result === null || result === void 0 ? void 0 : result.transaction.hash));
-                    console.log("------------------------------------------------------------------------");
-                    return [3 /*break*/, 3];
-                case 2:
-                    error_1 = _a.sent();
-                    console.log(error_1);
-                    return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
-            }
+            return [2 /*return*/, new Promise(function (resolve, reject) { return __awaiter(_this, void 0, void 0, function () {
+                    var signedSerializedTx, result, error_1;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                _a.trys.push([0, 2, , 3]);
+                                signedSerializedTx = signedTransaction.encode();
+                                return [4 /*yield*/, provider.sendJsonRpc("broadcast_tx_commit", [
+                                        Buffer.from(signedSerializedTx).toString("base64"),
+                                    ])];
+                            case 1:
+                                result = _a.sent();
+                                // console results :)
+                                console.log("Transaction Results: ", result.transaction);
+                                console.log("https://explorer." + config_1.networkId + ".near.org/transactions/" + (result === null || result === void 0 ? void 0 : result.transaction.hash));
+                                resolve(result.transaction);
+                                return [3 /*break*/, 3];
+                            case 2:
+                                error_1 = _a.sent();
+                                reject(error_1);
+                                return [3 /*break*/, 3];
+                            case 3: return [2 /*return*/];
+                        }
+                    });
+                }); })];
         });
     });
 }

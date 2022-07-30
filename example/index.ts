@@ -23,5 +23,7 @@ const provider = new nearAPI.providers.JsonRpcProvider({
 		keyPair
 	})
 
-	sendTransaction(provider, signedTransaction);
+	const transaction = await sendTransaction(provider, signedTransaction);
+
+	console.log('transaction', transaction)
 })())

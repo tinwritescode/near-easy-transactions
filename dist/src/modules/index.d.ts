@@ -22,6 +22,6 @@ declare type Requirements = {
     recentBlockHash: Buffer;
 };
 export declare function signTransaction({ actions, nonce, recentBlockHash, sender, keyPair, contractName }: SignedTransactionProps): SignedTransaction;
-export declare function sendTransaction(provider: nearAPI.providers.JsonRpcProvider, signedTransaction: SignedTransaction): Promise<void>;
+export declare function sendTransaction(provider: nearAPI.providers.JsonRpcProvider, signedTransaction: SignedTransaction): Promise<any>;
 export declare function initRequirements({ provider, sender, publicKey }: RequirementProps): Promise<Requirements>;
 export {};
